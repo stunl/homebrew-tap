@@ -7,15 +7,19 @@ class Stunl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/stunl/cli/releases/download/v5.2.0/stunl-darwin-arm64"
-      sha256 "0ba78610789333c777604d271967a4c8d8a9997ce6a714ffe443a88ff0791617"
+      sha256 "0ce48c26792d45ded2633bfeb4ff47351ca3ffe1d4d1ce18ba789c2f6884dd2f"
     else
       url "https://github.com/stunl/cli/releases/download/v5.2.0/stunl-darwin-amd64"
-      sha256 "7e77327770f0444cdad88bd5843c50b97f734b93fe67ee1a9b09dbdc06ec1dc9"
+      sha256 "4f10dc3a55e3dc4369163a486f92633ff9f121d7ebc8971c84d61642567ab511"
     end
   end
 
   def install
-    bin.install "stunl-darwin-#{Hardware::CPU.arch}" => "stunl"
+    if Hardware::CPU.arm?
+      bin.install "stunl-darwin-arm64" => "stunl"
+    else
+      bin.install "stunl-darwin-amd64" => "stunl"
+    end
   end
 
   def caveats
