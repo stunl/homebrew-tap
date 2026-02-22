@@ -1,16 +1,16 @@
 class Stunl < Formula
   desc "Fast and secure tunneling solution for exposing local services"
   homepage "https://stunl.com"
-  version "5.27.6"
+  version "5.27.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/stunl/cli/releases/download/v5.27.6/stunl-darwin-arm64"
-      sha256 "2fd0419bc8dffb5bf140d263c1557cc6888d61323c9f42288927a4bfe56ab157"
+      url "https://github.com/stunl/cli/releases/download/v5.27.7/stunl-darwin-arm64"
+      sha256 "1c08b30339dabd1258de53639b66a69f790c2585bc9ff007bb63b465e3f1335b"
     else
-      url "https://github.com/stunl/cli/releases/download/v5.27.6/stunl-darwin-amd64"
-      sha256 "b1b25e4e1e37a342c3900ffb086cdf2d23214cb522a577e1f1f121a1b27a36d6"
+      url "https://github.com/stunl/cli/releases/download/v5.27.7/stunl-darwin-amd64"
+      sha256 "4abf4d0a87254b076be72225e18b3a663a4de3db6f9e2b002eb5b87c11743308"
     end
   end
 
